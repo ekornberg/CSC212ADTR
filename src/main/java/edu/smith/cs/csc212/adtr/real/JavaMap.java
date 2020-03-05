@@ -51,6 +51,8 @@ public class JavaMap<K,V> extends MapADT<K,V> {
 		return this.data.size();
 	}
 
+	// add "data" to return statement
+	// so can remove from this class' data
 	@Override
 	public V remove(K k) {
 		return this.data.remove(k);

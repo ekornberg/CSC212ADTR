@@ -79,11 +79,11 @@ public class JavaList<T> extends ListADT<T> {
 		inner.add(0, value);	
 	}
 
+	// Should be able to have values more 
+	// than once in list (remove if statement)
 	@Override
 	public void addBack(T value) {
-		if (!inner.contains(value)) {
-			inner.add(value);		
-		}
+		inner.add(value);		
 	}
 
 	@Override

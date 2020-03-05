@@ -76,7 +76,7 @@ public abstract class ListADT<ItemType> implements Iterable<ItemType> {
 	public abstract void addFront(ItemType value);
 
 	/**
-	 * Add value to the back of hte list.
+	 * Add value to the back of the list.
 	 * 
 	 * @param value - the item to add.
 	 */

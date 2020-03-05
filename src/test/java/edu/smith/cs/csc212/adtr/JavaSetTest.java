@@ -9,17 +9,32 @@ import edu.smith.cs.csc212.adtr.real.JavaSet;
 
 public class JavaSetTest {
 	// =========	
-	// Size -- how many items in Set?
-	// if create new set of string and put nothing in it,
-	// it should be empty	
+	// Size -- how many items in Set? 
+	
+	/* If create new set of string and 
+	 * put nothing in it, it should be empty
+	 */
 	@Test
 	public void testEmpty() {
 		SetADT<String> empty = new JavaSet<>();
 		assertEquals(empty.size(), 0);
 	}
 	
+	/* If create new set of string and 
+	 * put 2 things, size should be 2
+	 */
+	@Test
+	public void testSize() {
+		SetADT<String> two = new JavaSet<>();
+		two.insert("X");
+		two.insert("Y");
+		assertEquals(two.size(), 2);
+	}
+	
+	
 	// =========
-	// Insert -- add an element to this set
+	// Insert -- add an element to this set 
+	
 	// If add "A", set should be size of 1
 	@Test
 	public void testInsertOnce() {
@@ -31,9 +46,10 @@ public class JavaSetTest {
 		assertEquals(one.size(), 1);
 	}
 	
-	// If add "A" once and "B" multiple times,
-	// Set size should be 2
-	// and should contain "A" and "B"
+	/* If add "A" once and "B" multiple times, 
+	 * Set size should be 2 and should
+	 * contain "A" and "B"
+	 */
 	@Test
 	public void testRepeatedInsert() {
 		SetADT<String> ab = new JavaSet<>();
@@ -59,12 +75,26 @@ public class JavaSetTest {
 	}
 	
 	// =========
-	// Contains -- has a certain value been seen in this Set?
-	// If add "A" once, "B" twice, and "C" many times,
-	// Set should contain "A", "B", and "C"
-	// and its size should be 3
+	// Contains -- has a certain value 
+	// been seen in this Set? 
+	
+	/* If add "A" once, Set should contain "A"
+	 * and its size should be 1
+	 */
 	@Test
 	public void testContains() {
+		SetADT<String> abc = new JavaSet<>();
+		abc.insert("A");
+		assertTrue(abc.contains("A"));
+		assertEquals(abc.size(), 1);
+	}
+	
+	/* If add "A" once, "B" twice, and "C" many times, 
+	 * Set should contain "A", "B", and "C" 
+	 *and its size should be 3
+	 */
+	@Test
+	public void testContains2() {
 		SetADT<String> abc = new JavaSet<>();
 		abc.insert("A");
 		abc.insert("B");
@@ -80,11 +110,25 @@ public class JavaSetTest {
 	
 	// =========
 	// Remove -- remove a value from this Set
-	// If add "A" and "C" once and "B" twice,
-	// then remove "A" and "D,"
-	// Set size should be 2	
+	
+	/* If add "A" twice and "B" once,
+	 * then remove "A", Set size should be 1
+	 */
 	@Test
 	public void testRemove() {
+		SetADT<String> aba = new JavaSet<>();
+		aba.insert("A");
+		aba.insert("B");
+		aba.insert("A");
+		aba.remove("A");
+		assertEquals(aba.size(), 1);		
+	}	
+	
+	/* If add "A" and "C" once and "B" twice, 
+	 * then remove "A" and "D", Set size is 2
+	 */
+	@Test
+	public void testRemove2() {
 		SetADT<String> abbc = new JavaSet<>();
 		abbc.insert("A");
 		abbc.insert("B");
