@@ -45,7 +45,9 @@ public class JavaListTest {
 	@Test(expected=EmptyListError.class)
 	public void testRemoveFrontCrash() {
 		ListADT<String> data = makeEmptyList();
-		data.removeFront();
+		data.removeFront(); 
+		// can't do anything b/c can't remove from empty list and java says oh we del null for you but we want to make it crash b/c it would be programmer's fault
+		// would check size before do remove
 	}
 	
 	@Test(expected=EmptyListError.class)

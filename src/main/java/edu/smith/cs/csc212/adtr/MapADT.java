@@ -48,7 +48,7 @@ public abstract class MapADT<KeyType, ValueType> implements Iterable<Pair<KeyTyp
 	 * @return what it was mapped to, if you care.
 	 */
 	@Nullable
-	public abstract ValueType remove(KeyType k);
+	public abstract ValueType remove(KeyType keyType);
 
 	/**
 	 * Get a list of all the keys in this table (order may be random).
